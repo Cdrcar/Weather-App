@@ -116,7 +116,7 @@ var currentWeatherSection = function(cityName) {
 
                     // Weather data from response applied to the current weather section
                     
-                    // Add style to Weather Container addig a class to the div with the id of #current-weather-container
+                    // Add style to Weather Container adding a class to the div with the id of #current-weather-container
                     var currentWeatherContainer = $("#current-weather-container");
                     currentWeatherContainer.addClass("current-weather-container");
 

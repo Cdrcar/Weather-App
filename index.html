@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Link to Save Icon Stylesheet -->
+    <link 
+    rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- Link to weather icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+    <!-- Link to CSS Stylesheet local folder-->
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body class="body">
+    <header class="header">
+        <div class="h1-container">
+            <h1 class="h1 text-light">Weather Dashboard</h1>
+        </div>
+    </header>
+<!-- Main Container -->
+    <main class="main">
+        <!-- Container-->
+        <div class="container-fluid">
+
+
+            <!-- Left Column with Seach Form and Search History -->
+                <div class="col-sm-4 bg-light p-0 search-container">
+                    <!-- Cities Search Form -->
+                    <div class="form-container">
+                        <form id="search-form">
+                            <!-- Search Label-->
+                            <div class="row m-0">
+                                <label for="search-input" class="search-label m-0 text-dark">Search for a City:</label>
+                            </div>
+                            <!-- Input and Button-->
+                            <div class="row m-0">
+                                <div class="col-sm-8 p-0 my-auto">
+                                    <input type="text" id="search-input" name="search-input" class="search-input rounded">
+                                </div>
+                                <div class="col-sm-4 p-0">
+                                    <button type="submit" class="btn bg-primary rounded search-button">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Search history -->
+                    <div id="search-history-container" class="row m-0 search-history-container">
+
+                    </div>
+                    </div>
+        
+
+
+
+            <!-- Right Column with the Current Weather conditions and the 5 days Forecast -->
+                <div class="col-sm-8 p-0">
+
+
+                    <!-- Current weather conditions -->
+                    <div id="current-weather-container" class="row d-block">
+                        <!-- Current City as a title and current Date to be inserted on JS-->
+                        <div class="current-city-container">
+                            <h2 id="current-city" class="current-title d-inline"></h2>
+                            <img id="current-weather-icon" class="d-inline" src="" alt="">
+                        </div>
+                        <!-- current weather temperature -->
+                        <p class="current-temperature" id="current-temperature"></p>
+                        <!-- current weather humidity -->
+                        <p class="current-humidity" id="current-humidity"></p>
+                        <!-- current weather wind speed -->
+                        <p class="current-wind-speed" id="current-wind-speed"></p>
+                        <!-- current weather uv index -->
+                        <p class="current-uv-index" id="current-uv-index"></p>
+                        <p class="current-number rounded" id="current-number"></p>
+                    </div>
+
+
+                    <!-- Forecast for 5 days-->
+                    <div class="row future-forecast-container d-block">
+                        <!-- Forecast for 5 days title-->
+                        <h2 class="future-forecast-title" id="future-forecast-title"></h2>
+                        <!-- Forecast cards container-->
+                        <div id="forecasts-cards-container" class="forecasts-cards-container d-flex justify-content-between">
+                            <!-- Future date 1 card -->
+                            <div class="future-card">
+                                <p class="future-date" id="future-date-1"></p>
+                                <img id="future-icon-1" src="" alt="">
+                                <p class="future-temp" id="future-temp-1"></p>
+                                <p class="future-humidity" id="future-humidity-1"></p>
+                            </div>
+                            <!-- Future date 2 card -->
+                            <div class="future-card">
+                                <p class="future-date" id="future-date-2"></p>
+                                <img id="future-icon-2" src="" alt="">
+                                <p class="future-temp" id="future-temp-2"></p>
+                                <p class="future-humidity" id="future-humidity-2"></p>
+                            </div>
+                            <!-- Future date 3 card -->
+                            <div class="future-card">
+                                <p class="future-date" id="future-date-3"></p>
+                                <img id="future-icon-3" src="" alt="">
+                                <p class="future-temp" id="future-temp-3"></p>
+                                <p class="future-humidity" id="future-humidity-3"></p>
+                            </div>
+                            <!-- Future date 4 card -->
+                            <div class="future-card">
+                                <p class="future-date" id="future-date-4"></p>
+                                <img id="future-icon-4" src="" alt="">
+                                <p class="future-temp" id="future-temp-4"></p>
+                                <p class="future-humidity" id="future-humidity-4"></p>
+                            </div>
+                            <!-- Future date 5 card -->
+                            <div class="future-card">
+                                <p class="future-date" id="future-date-5"></p>
+                                <img id="future-icon-5" src="" alt="">
+                                <p class="future-temp" id="future-temp-5"></p>
+                                <p class="future-humidity" id="future-humidity-5"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!-- End Container-->
+        </div>
+    <!-- End Main Container -->
+    </main>
+    <!-- Link to Jquery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Link to Moment.js library for dates and times-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- Link to JavaScript local folder-->
+    <script src="./Assets/js/script.js"></script>
+</body>
+</html>

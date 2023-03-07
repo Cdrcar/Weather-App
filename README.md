@@ -1,2 +1,2 @@
-# challenge-06-Weather-App
+# Weather Dashboard
 Server-Side APIs

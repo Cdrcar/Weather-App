@@ -5,9 +5,10 @@
 }
 body{
     background-color: rgb(157, 195, 205);
-   min-height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-image:linear-gradient(rgb(170, 199, 207),rgb(97, 168, 188)) ;
+    
 }
 .h1-container {
     padding: 4px;
@@ -48,7 +49,9 @@ body{
 .search-history-container {
     padding: 10px;
 }
-
+.past-search-container {
+    width: 100%;
+}
 .past-search {
     background-color: white;
     border-width: thin;
@@ -57,11 +60,11 @@ body{
     border-radius: 3px;
     margin: 0;
     text-align: left;
-    width: 350px;
     height: 45px;
     line-height: 45px;
     padding: 0 20px;
     color: grey;
+    flex-direction: column;
 }
 
 .current-weather-container {
@@ -119,11 +122,11 @@ body{
 }
 
 .future-forecast-container {
-    margin: 5px 20px 0 20px;
+    margin: 50px 80px;
 }
 
 .future-forecast-title {
-    font-size: 27px;
+    font-size: 25px;
 }
 
 .future-card-details {
@@ -154,4 +157,5 @@ body{
     bottom: 0;
     width: 100%;
     text-align: center;
+    justify-content: baseline;
 }

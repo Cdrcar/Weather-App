@@ -153,9 +153,6 @@ body{
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    margin-top: auto; /*To position foot at the bottom */
     text-align: center;
-    justify-content: baseline;
 }

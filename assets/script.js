@@ -176,17 +176,20 @@ var currentWeatherSection = function(cityName) {
 
 
 var fiveDayForecastSection = function(cityName) {
-    // Call to OpenWeather API to get current weather data for the specified city
+    // Call to OpenWeather API to get data from the specified city
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
         // Convert response in a JavaScript object
         .then(function(response) {
             return response.json();
         })
+        //From the previus response object, obtain Latitude ans Longitude
         .then(function(data) {
             console.log(data)
             // Obtain city's longitude and latitude to use them in the next call API call Open Weather
             var cityLon = data.coord.lon;
             var cityLat = data.coord.lat;
+
+            //With the lat and log, maje a second call to get  5 day forecast
 
             fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${apiKey}`)
                 // Get response from one call api and turn it into objects

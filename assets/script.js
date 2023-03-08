@@ -235,9 +235,9 @@ var fiveDayForecastSection = function(cityName) {
 
 
 
-// Called when a search history entry is clicked
+// Added Event Listener to the search history container to call functions
 $("#search-history-container").on("click", "p", function() {
-    // get text (city name) of entry and pass it as a parameter to display weather conditions
+    // Get text content of p element (the city name), store it in variable previousCityName nd pass it as a parameter to display weather conditions
     var previousCityName = $(this).text();
     currentWeatherSection(previousCityName);
     fiveDayForecastSection(previousCityName);

@@ -37,7 +37,9 @@ body{
     background-color: rgb(217, 228, 228);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+.btn {
+    background-color:rgb(124, 163, 195) ;
+}
 .form-container {
     padding: 10px;
 }

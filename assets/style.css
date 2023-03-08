@@ -132,6 +132,7 @@ body{
 }
 
 .future-card-style {
+    
     width: 17%;
     padding: 7px 0 0 7px;
     background-image: linear-gradient(rgb(124, 163, 195), rgb(67, 93, 115));
@@ -140,8 +141,9 @@ body{
 }
 
 .future-date {
-    font-size: 23px;
+    font-size: 90%;
     text-align: center;
+
 }
 
 .future-icon {

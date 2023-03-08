@@ -3,7 +3,6 @@ var apiKey = "1b18ce13c84e21faafb19c931bb29331";
 var savedSearches = [];
 
 
-
 //Event listener when click on the button from the search form 
 $(".btn").on("click", function(event) {
     event.preventDefault();
@@ -109,6 +108,7 @@ var currentWeatherSection = function(cityName) {
             fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${apiKey}`)
                 // Convert response in a JavaScript object
                 .then(function(response) {
+                    console.log(response);
                     return response.json();
                 })
                 //Call the searchHistoryList to add searched city to the list of past searches
@@ -176,19 +176,20 @@ var currentWeatherSection = function(cityName) {
 
 
 var fiveDayForecastSection = function(cityName) {
-    // get and use data from open weather current weather api end point
+    // Call to OpenWeather API to get current weather data for the specified city
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
-        // get response and turn it into objects
+        // Convert response in a JavaScript object
         .then(function(response) {
             return response.json();
         })
-        .then(function(response) {
-            // get city's longitude and latitude
-            var cityLon = response.coord.lon;
-            var cityLat = response.coord.lat;
+        .then(function(data) {
+            console.log(data)
+            // Obtain city's longitude and latitude to use them in the next call API call Open Weather
+            var cityLon = data.coord.lon;
+            var cityLat = data.coord.lat;
 
             fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${apiKey}`)
-                // get response from one call api and turn it into objects
+                // Get response from one call api and turn it into objects
                 .then(function(response) {
                     return response.json();
                 })
@@ -199,28 +200,29 @@ var fiveDayForecastSection = function(cityName) {
                     var futureForecastTitle = $("#future-forecast-title");
                     futureForecastTitle.text("Forecast for the next 5 days:")
 
-                    // using data from response, set up each day of 5 day forecast
+                    // Using data from response, set up each day of 5 day forecast
                     for (var i = 1; i <= 5; i++) {
-                        // add class to future cards to create card containers
+                        // console.log(response.daily[i])
+                        // Add class to future cards to create card containers
                         var futureCard = $(".future-card");
                         futureCard.addClass("future-card-style");
 
-                        // add date to 5 day forecast
+                        // Add date to 5 day forecast
                         var futureDate = $("#future-date-" + i);
                         date = moment().add(i, "d").format("DD/MM/YY");
                         futureDate.text(date);
 
-                        // add icon to 5 day forecast
+                        // Add icon to 5 day forecast
                         var futureIcon = $("#future-icon-" + i);
                         futureIcon.addClass("future-icon");
                         var futureIconCode = response.daily[i].weather[0].icon;
                         futureIcon.attr("src", `https://openweathermap.org/img/wn/${futureIconCode}@2x.png`);
 
-                        // add temp to 5 day forecast
+                        // Add temp to 5 day forecast
                         var futureTemp = $("#future-temp-" + i);
                         futureTemp.text("Temp: " + response.daily[i].temp.day + " \u00B0F");
 
-                        // add humidity to 5 day forecast
+                        // Add humidity to 5 day forecast
                         var futureHumidity = $("#future-humidity-" + i);
                         futureHumidity.text("Humidity: " + response.daily[i].humidity + "%");
                     }
@@ -230,7 +232,7 @@ var fiveDayForecastSection = function(cityName) {
 
 
 
-// called when a search history entry is clicked
+// Called when a search history entry is clicked
 $("#search-history-container").on("click", "p", function() {
     // get text (city name) of entry and pass it as a parameter to display weather conditions
     var previousCityName = $(this).text();

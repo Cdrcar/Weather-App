@@ -57,6 +57,10 @@ body{
     padding: 0 15px;
 }
 
+.search-input:hover{
+cursor: pointer;
+}
+
 .search-button {
     padding: 10px 15px;
 }
@@ -65,7 +69,8 @@ body{
     padding: 10px;
 }
 .past-search-container {
-    width: 100%;
+    width: 80%;
+    
 }
 .past-search {
     background-color: white;
@@ -73,7 +78,7 @@ body{
     border-color: lightgrey;
     border-style: solid;
     border-radius: 3px;
-    margin: 0;
+    
     text-align: left;
     height: 45px;
     line-height: 45px;
@@ -81,11 +86,15 @@ body{
     color: grey;
     flex-direction: column;
 }
+.past-search:hover{
+    cursor: pointer;
+    color: rgb(67, 93, 115);
+}
 
 .current-weather-container {
     margin-top: 50px;
     border-radius: 20px;
-    background-color: rgb(217, 228, 228);
+    background-image: linear-gradient(rgb(255 255 255), rgb(184 237 247));
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-left: 20px;
     margin-right: 20px;
@@ -138,6 +147,9 @@ body{
 
 .future-forecast-container {
     margin: 50px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .future-forecast-title {
@@ -145,10 +157,10 @@ body{
 }
 
 .future-card-style {
-    
-    width: 17%;
+    margin: 10px;
+    width: 30%;
     padding: 7px 0 0 7px;
-    background-image: linear-gradient(rgb(124, 163, 195), rgb(67, 93, 115));
+    background-image: linear-gradient(rgb(212 239 243), rgb(100 153 167));
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -166,8 +178,10 @@ body{
 }
 
 .future-temp, .future-humidity {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 200;
+    align-items: center;
+    text-align: center;
 }
 
 

@@ -16,7 +16,7 @@ A weather dashboaard that allows the user to search for a city and obtain the cu
 ![Weather Dashboard Final Result](./assets/finalresult.png) 
 
 ## Deployment
-[Link to Weather App](https://cdrcar.github.io/challenge-06-Weather-App/)
+[Link to Weather App](https://cdrcar.github.io/Weather-App/)
 
 ## Libraries:
 [Moment.js](https://momentjs.com/)
